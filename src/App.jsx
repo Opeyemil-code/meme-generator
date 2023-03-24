@@ -4,7 +4,7 @@ import Header from './header/header'
 import Go from './form/dispForm'
 import './App.css'
 import Button from './button/button'
-import Image from './image/image'
+/*import Image from './image/image'*/
 import Form from './form/dispForm'
 export default function App(params) {
     return(
@@ -12,7 +12,7 @@ export default function App(params) {
           <Header />
           <Go />
           <Button />
-          <Image/>
+         
         </div>
         
     )
