@@ -1,41 +1,115 @@
 import React from "react";
 //import Image from "../image/image";
-import memesData from "../memesData/memesData";
+//import memesData from "../memesData/memesData";
+
+  
 
 
 export default function Button(params) {
-    
-   const [memeImage, setmemeImage] = React.useState('')
+
+
+  const [meme, setMeme]  = React.useState(
+    {
+        top : '',
+        bottom : '',
+        randomImage : 'http://i.imgflip.com/1bij.jpg'
+    }
+  )
+
+  const [allMemeImages, setallMemesimages] = React.useState([]) 
+
+  React.useEffect(()=> {
+    fetch('https://api.imgflip.com/get_memes')
+    .then(res => res.json())
+    .then(data => setallMemesimages(data.data.memes))
+  }, [])
+
+
+  function Input(event) {
+     setMeme(
+        (prev) => {
+            return {
+                ...prev, [event.target.name] : event.target.value
+            }
+        }
+     )
+  }
+
+
+  function Prevent(event) {
+    event.preventDefault()
+  }
+
+  
    
    function getMemeImage(params) {
-        const memesArray = memesData.data.memes
-        const random = Math.floor(Math.random() * memesArray.length)
-    
-       setmemeImage(memesArray[random].url)
-       
+        //const memesArray = allMemeImages.data.memes
+        const random = Math.floor(Math.random() * allMemeImages.length)
+        const url = allMemeImages[random].url
+        
+       setMeme(
+        (prevState) => {
+            return{
+                ...prevState,
+                randomImage : url
+            }
+        }
+       )
+          
     } 
 
     return(
-            <div className="text-center mt-6">
-                <button onClick={getMemeImage} className="bg-purple-800 w-2/3 mx-auto text-center py-2 text-white text-xl font-bolder font-mono">Generate memes here</button>
+            <div className="text-center mt-">
 
 
-                <div className="w-2/3 mx-auto mt-10">
-            <div className="absolute flex ml-80 border text-center bg-white left-96 px-24 py-2 text-2xl mt-4">
-                <h2>opeyemi</h2>
+      <form className="flex mx-auto lg:w-2/3 flex-col " onSubmit={Prevent}>
+
+        <div className="flex flex-row ">
+
+        <input  className="border border-black lg:px-20 lg:mx-auto lg:w-96 w-40 lg:ml-20 py-2 mt-8 rounded-lg flex ml-2"
+        type="text"
+        placeholder='first words'
+        name='top'
+        onChange={Input}
+        value={meme.top}/>
+
+        <input className="border border-black lg:px-20 mx-auto lg:w-96 lg:ml-20 lg:py-2 mt-8 rounded-lg flex" 
+        type="text" 
+        placeholder='seconds words'
+        name="bottom"
+        onChange={Input}
+        value={meme.bottom}/>
+
+      </div>
+   
+
+     <button onClick={getMemeImage} className="bg-purple-800 w-11/12 mx-auto text-center py-2 text-white text-xl font-bolder font-mono mt-4" >Generate memes here</button>
+
+
+    </form> 
+
+
+   <div className="lg:w-2/3 mx-auto mt-10">
+
+
+              <div className="absolute flex lg:ml-80 border text-center bg-white lg:left-96 lg:px-24 py-2 text-xl lg:w-auto w-3/4 mx-auto lg:w-auto h- ml-12 ">
+                <h2 className="text-xl">{meme.top}</h2>
             </div>
 
 
-            <div className="absolute flex ml-80 border text-center bg-white left-96 px-24 py-2 text-2xl bottom-48">
-                <h2>opeyemi</h2>
+            <div className="absolute flex lg:ml-80 border text-center text-xl bg-white lg:left-96 lg:px-24 py-2 lg:bottom-48 w-3/4 mx-auto lg:w-auto bottom-12 ml-12 ">
+                <p className="text-md">{meme.bottom}</p>
             </div>
 
-            <img className="w-full h-96" src={memeImage} alt="" />
+            <img className="lg:w-full lg:h-96 w-11/12 h-96 mx-auto" alt="" src={meme.randomImage} />
 
         
-        </div>
+          </div>
 
 
-            </div>
+    </div>
+
+
     )
 }
+
