@@ -73,7 +73,7 @@ export default function Button(params) {
         onChange={Input}
         value={meme.top}/>
 
-        <input className="border border-black lg:px-20 mx-auto lg:w-96 lg:ml-20 lg:py-2 mt-8 rounded-lg flex" 
+        <input className="border border-black lg:px-20 mx-auto lg:w-96 lg:ml-20 lg:py-2 mt-8 rounded-lg flex w-40" 
         type="text" 
         placeholder='seconds words'
         name="bottom"
@@ -97,7 +97,7 @@ export default function Button(params) {
             </div>
 
 
-            <div className="absolute flex lg:ml-80 border text-center text-xl bg-white lg:left-96 lg:px-24 lg:py-2 lg:bottom-48 w-3/4 mx-auto lg:w-auto bottom-12 ml-12 p-2">
+            <div className="absolute flex lg:ml-80 border text-center text-xl bg-white lg:left-96 lg:px-24 lg:py-2 lg:bottom-40 w-3/4 mx-auto lg:w-auto bottom-12 ml-12 p-2">
                 <p className="text-md mx-auto text-center">{meme.bottom}</p>
             </div>
 
