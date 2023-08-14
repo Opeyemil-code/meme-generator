@@ -64,7 +64,7 @@ export default function Button(params) {
 
       <form className="flex mx-auto lg:w-2/3 flex-col " onSubmit={Prevent}>
 
-        <div className="flex flex-row ">
+        <div className="flex flex-row mx-auto space-x-5">
 
         <input  className="border border-black lg:px-20 lg:mx-auto lg:w-96 w-40 lg:ml-20 py-2 mt-8 rounded-lg flex ml-2"
         type="text"
@@ -97,7 +97,7 @@ export default function Button(params) {
             </div>
 
 
-            <div className="absolute flex lg:ml-80 border text-center text-xl bg-white lg:left-96 lg:px-24 lg:py-2 lg:bottom-48 w-3/4 mx-auto lg:w-auto bottom-28 ml-12 p-2">
+            <div className="absolute flex lg:ml-80 border text-center text-xl bg-white lg:left-96 lg:px-24 lg:py-2 lg:bottom-48 w-3/4 mx-auto lg:w-auto bottom-32 ml-12 p-2">
                 <p className="text-md mx-auto text-center">{meme.bottom}</p>
             </div>
 
