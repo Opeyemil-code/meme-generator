@@ -97,7 +97,7 @@ export default function Button(params) {
             </div>
 
 
-            <div className="absolute flex lg:ml-80 border text-center text-xl bg-white lg:left-96 lg:px-24 lg:py-2 lg:bottom-40 w-3/4 mx-auto lg:w-auto bottom-12 ml-12 p-2">
+            <div className="absolute flex lg:ml-80 border text-center text-xl bg-white lg:left-96 lg:px-24 lg:py-2 lg:bottom-48 w-3/4 mx-auto lg:w-auto bottom-20 ml-12 p-2">
                 <p className="text-md mx-auto text-center">{meme.bottom}</p>
             </div>
 
