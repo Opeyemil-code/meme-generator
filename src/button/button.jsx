@@ -92,13 +92,13 @@ export default function Button(params) {
    <div className="lg:w-2/3 mx-auto mt-10">
 
 
-              <div className="absolute flex lg:ml-80 border text-center bg-white lg:left-96 lg:px-24 lg:py-2 text-xl lg:w-auto w-3/4 lg:mx-auto lg:w-auto  ml-12 mt-1">
-                <p className="text-md mx-auto text-center p-2">{meme.top}</p>
+              <div className="absolute flex lg:ml-80 border text-center bg-white lg:left-96 lg:px-24 lg:py-2 text-xl lg:w-auto w-3/4 lg:mx-auto lg:w-auto  ml-12 mt-1 p-2 lg:p-8">
+                <p className="text-md mx-auto text-center ">{meme.top}</p>
             </div>
 
 
-            <div className="absolute flex lg:ml-80 border text-center text-xl bg-white lg:left-96 lg:px-24 lg:py-2 lg:bottom-48 w-3/4 mx-auto lg:w-auto bottom-12 ml-12 ">
-                <p className="text-md mx-auto text-center p-2">{meme.bottom}</p>
+            <div className="absolute flex lg:ml-80 border text-center text-xl bg-white lg:left-96 lg:px-24 lg:py-2 lg:bottom-48 w-3/4 mx-auto lg:w-auto bottom-12 ml-12 p-2">
+                <p className="text-md mx-auto text-center">{meme.bottom}</p>
             </div>
 
             <img className="lg:w-full lg:h-96 w-11/12 h-96 mx-auto" alt="" src={meme.randomImage} />
